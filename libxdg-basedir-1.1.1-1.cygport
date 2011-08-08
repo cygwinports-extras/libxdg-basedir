@@ -1,0 +1,11 @@
+
+
+SRC_URI="http://n.ethz.ch/student/nevillm/download/libxdg-basedir/${P}.tar.gz"
+
+PKG_NAMES="${PN}1 ${PN}-devel"
+libxdg_basedir1_CONTENTS="usr/bin/cygxdg-basedir-1.dll"
+libxdg_basedir_devel_CONTENTS="usr/include/ usr/lib/ usr/share/doc/"
+
+# header names are too generic for /usr/include
+CYGCONF_ARGS+="--includedir=/usr/include/${PN}"
+MAKEOPTS+=" LDFLAGS_NOUNDEFINED=-no-undefined"
